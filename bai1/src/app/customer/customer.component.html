@@ -1,0 +1,29 @@
+<table>
+
+    <tr>
+        <td>Id</td>
+        <td><input type="text" [(ngModel)]="CurrentCustomer.id" /></td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>
+            <input type="text" [(ngModel)]="CurrentCustomer.name">
+        </td>
+    </tr>
+
+    <tr>
+        <td>Phone</td>
+        <td>
+            <input type="text" [(ngModel)]="CurrentCustomer.phone">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button type="button" (click)="postToServer()" >Submit</button>
+        </td>
+    </tr>
+</table>
+
+<p>
+    Customer Name: {{CurrentCustomer.name}}
+</p>

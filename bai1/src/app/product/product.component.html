@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <a [routerLink]="['/product-add']" routerLinkActive="router-link-active"
+                class="btn btn-primary mt-4 mb-2" >
+                Thêm mới sản phẩm
+            </a>
+
+            <table class="table table-bordered">
+                <tr>
+                   <td>Mã sản phẩm</td> 
+                   <td>Tên danh mục</td> 
+                   <td>Tên sản phẩm</td>
+                   <td>Giá</td>
+                   <td>Số lượng</td>
+                   <td>Nhà cung cấp</td>
+                   <td>
+                       Chức năng
+                   </td>
+                </tr>
+                <tr *ngIf="total === 0">
+                   <td colspan="7">
+                       Chưa có dữ liệu
+                   </td> 
+                </tr>
+                <tr *ngFor="let item of product">
+                    <td>{{item.Id}}</td>
+                    <td>{{item.CategoryName}}</td>
+                    <td>{{item.ProductName}}</td>
+                    <td>{{item.Price}}</td>
+                    <td>{{item.Amount}}</td>
+                    <td>{{item.Supplier}}</td>
+                    <td>
+                        <a class="btn btn-warning" [routerLink]="['/product-edit/'+item.id]" routerLinkActive="router-link-active" >
+                            Chỉnh sửa
+                        </a>
+                        <a class="btn btn-danger"
+                            (click)="deleteItem(item.Id)"
+                            >
+                            Xóa
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>

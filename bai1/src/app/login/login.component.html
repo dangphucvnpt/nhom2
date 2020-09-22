@@ -1,0 +1,26 @@
+<table>
+    <tr>
+        <td>
+            Username: 
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="UserLogin.username">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Password: 
+        </td>
+        <td>
+            <input type="password" [(ngModel)]="UserLogin.password">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button type="button" (click)="login()">Submit</button>
+        </td>
+    </tr>
+</table>
+<p>
+    {{message}}
+</p>

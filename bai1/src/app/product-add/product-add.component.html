@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            
+            <form [formGroup]="currentProduct.formGroup" (ngSubmit)="submitData()">
+                <div class="form-group">
+                  <label for="">Tên sản phẩm</label>
+                  
+                  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId"
+                        [(ngModel)]="currentProduct.productName"
+                        formControlName="productName">
+                 <label  for="">Nhóm sản phẩm</label><br />
+                    <select class="form-control" [(ngModel)]="currentProduct.categoryId" formControlName="categoryId">
+                    <option *ngFor="let item of categories" [value]="item.id"  >{{item.categoryName}}</option>
+                    </select>
+                <label for="">Giá</label>
+                  
+                  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId"
+                        [(ngModel)]="currentProduct.price"
+                        formControlName="price">
+
+                        <label for="">Số tiền</label>
+                  
+                  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId"
+                        [(ngModel)]="currentProduct.amount"
+                        formControlName="amount">
+
+                        <label for="">Nhà cung cấp</label>
+                  
+                  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId"
+                        [(ngModel)]="currentProduct.supplier"
+                        formControlName="supplier">
+                        
+                  
+                  <small id="helpId" class="text-muted"
+                    [hidden]="!(currentProduct.formGroup.controls['productName'].hasError('required'))"
+                    >
+                      Tên sản phẩm không được để trống
+                  </small>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!(currentProduct.formGroup.valid)">
+                    Lưu
+                </button>
+            </form>
+
+        </div>
+    </div>
+</div>
